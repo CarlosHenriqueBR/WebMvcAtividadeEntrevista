@@ -1,0 +1,59 @@
+﻿@model WebAtividadeEntrevista.Models.BeneficiarioModel
+
+<style>
+    #gridBeneficiarios .acao {
+        display: inline-flex;
+    }
+
+    #gridBeneficiarios .btn-excluir {
+        margin-left: 3px;
+    }
+
+</style>
+
+<div class="modal-header">
+    <button class="btn btn-sm pull-right btn-link" type="button" id="btnCloseModal" data-dismiss="modal">X</button>
+    <h4>Editar Beneficiário</h4>
+</div>
+<div class="modal-body">
+
+    <form id="formBeneficiarioEditar" role="form" method="post">
+        
+        @Html.HiddenFor(x => x.Id)
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="IdCliente">Clientes:</label>
+                    <select class="form-control" id="IdCliente" name="IdCliente">
+                        
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="Cpf">CPF:</label>
+                    @Html.TextBoxFor(x => x.Cpf, new {@class="form-control", placeholder= "Ex.: 999.999.999-99", maxlength="14", required= "required" })
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="Nome">Nome:</label>
+                    @Html.TextBoxFor(x => x.Nome, new {@class="form-control", placeholder= "Ex.: 999.999.999-99", maxlength="50", required= "required" })
+                </div>
+            </div>
+        </div>
+
+    </form>
+    
+    <div class="modal-footer">
+        <button class="btn btn-sm btn-success" type="button">Salvar</button>
+        <button class="btn btn-sm btn-default" type="button" data-dismiss="modal">Fechar</button>
+    </div>
+</div>

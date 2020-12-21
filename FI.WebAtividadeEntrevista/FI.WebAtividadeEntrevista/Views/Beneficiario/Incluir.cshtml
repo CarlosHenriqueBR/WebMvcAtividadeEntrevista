@@ -1,0 +1,52 @@
+﻿<style>
+    #gridBeneficiarios .acao {
+        display: inline-flex;
+    }
+
+    #gridBeneficiarios .btn-excluir {
+        margin-left: 3px;
+    }
+
+
+</style>
+
+<div class="modal-header">
+    <button class="btn btn-sm pull-right btn-link" type="button" id="btnCloseModal" data-dismiss="modal">X</button>
+    <h4>Beneficiários</h4>
+</div>
+<div class="modal-body">
+
+    <form id="formBeneficiario" role="form" method="post">
+
+        <input type="hidden" value="" name="IdCliente" id="IdCliente" />
+
+        <div class="row">
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label for="Cpf">CPF:</label>
+                    <input required="required" type="text" class="form-control" data-mask="000.000.000-00" id="Cpf" name="Cpf" placeholder="Ex.: 999.999.999-99" maxlength="14">
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label for="Nome">Nome:</label>
+                    <input required="required" type="text" class="form-control" id="Nome" name="Nome" placeholder="Ex.: João" maxlength="50">
+                </div>
+            </div>
+            <div class="col-md-2" style="margin-top: 27px">
+                <div class="form-group">
+                    <button type="button" id="btnIncluir" class="btn btn-sm btn-success">Incluir</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+    
+    <table id="gridBeneficiarios" class="table"></table>
+    
+    <div class="modal-footer">
+        <button class="btn btn-sm btn-default" type="button" data-dismiss="modal">Fechar</button>
+    </div>
+</div>
+
+
